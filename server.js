@@ -102,6 +102,7 @@ app.listen(PORT, () => {
   pool.query('SELECT NOW()', (err, res) => {
     if (err) {
       console.error('❌ DB connection failed:', err.message);
+      console.log('🔍 DATABASE_URL:', process.env.DATABASE_URL);
     } else {
       console.log('🔗 Connected to Supabase at:', res.rows[0].now);
     }
